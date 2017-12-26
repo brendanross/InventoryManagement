@@ -37,6 +37,9 @@ class StockItem(models.Model):
     
     #MY ADDITIONS
     purchase_cost = models.DecimalField(max_digits=100, decimal_places=2, blank=True, null=True)
+    estimated_price = models.DecimalField(max_digits=100, decimal_places=2, blank=True, null=True)
+    purchase_date = models.DateField(blank=True, null=True)
+   
     #END MY
 
     # Stock status types

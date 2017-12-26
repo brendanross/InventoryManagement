@@ -16,6 +16,8 @@ class StockItemSerializer(serializers.HyperlinkedModelSerializer):
                   'quantity',
                   'status',
                   'purchase_cost',
+                  'estimated_price',
+                  'purchase_date',
                   'notes',
                   'updated',
                   'stocktake_date',

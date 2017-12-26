@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'project.apps.ProjectConfig',
     'stock.apps.StockConfig',
     'supplier.apps.SupplierConfig',
-    'track.apps.TrackConfig'
+    'track.apps.TrackConfig',
+    'inventory'
 ]
 
 MIDDLEWARE = [

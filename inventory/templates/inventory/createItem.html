@@ -1,0 +1,90 @@
+{% extends 'inventory/base.html' %}
+{% block title %}
+    Create Item
+{% endblock %}
+{% block content %}
+    <form action="/inv/new/" method="POST">{% csrf_token %}
+        <fieldset>
+            <label>
+                Item:
+            </label>
+            <input type="text" name="item">
+            
+            <br />
+            
+            <label>
+                Location:
+            </label>
+            <select name="location">
+                {% for url, name in location_list %}
+                    <option value="{{ url }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            
+            <br />
+            
+            <label>
+                Description:
+            </label>
+            <input type="text" name="description">
+            
+            <br />
+            
+            <label>
+                SKU:
+            </label>
+            <input type="text" name="SKU">
+            <br />
+            
+            <label>
+                Quantity:
+            </label>
+            <input type="text" name="quantity">
+            
+            <br />
+            
+            <label>
+                Purchase Date:
+            </label>
+            <input name="date" type="date">
+            
+            <br />
+            
+            <label>
+                Status:
+            </label>
+            <select name="status">
+                <option value="10">In stock</option>
+                <option value="15">Incoming</option>
+                <option value="20">In Progress</option>
+                <option value="25">Complete</option>
+                <option value="50">Attention Needed</option>
+                <option value="55">Damaged</option>
+                <option value="60">Destroyed</option>
+            </select>
+            
+            <br />
+            
+            <label>
+                Notes:
+            </label>
+            <input type="text" name="notes">
+            
+            <br />
+            
+            <label>
+                Purchase Price:
+            </label>
+            <input type="number" name="purchase_price">
+            
+            <br />
+            
+            <label>
+                Expected Price:
+            </label>
+            <input type="text" name="expected_price">
+            
+            <input type="submit">
+        </fieldset>
+    </form>
+{% endblock %}
